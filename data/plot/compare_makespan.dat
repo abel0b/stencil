@@ -1,3 +1,5 @@
 
-"stencil-baseline" 
-"stencil-openmp" 
+"baseline" 17.840768293
+"seq" 11.979741901
+"simd" 2.487188174
+"openmp" 0.148645377

@@ -2,18 +2,29 @@
 #define STENCIL_H
 
 #define abs(a)((a) > 0 ? (a) : -(a))
-#define min(a, b)((a > b) ? (b) : (a))
 
 #ifndef SIZEX
-#define SIZEX 100
+#define SIZEX 128
 #endif
 
 #ifndef SIZEY
-#define SIZEY 100
+#define SIZEY 128
 #endif
 
 #ifndef SIZEZ
-#define SIZEZ 100
+#define SIZEZ 128
 #endif
+
+#ifndef BLOCKSIZE
+#define BLOCKSIZE 4
+#endif
+
+inline int max(int a, int b) {
+    return (a>=b)? a : b;
+}
+
+inline int min(int a, int b) {
+    return (a<=b)? a : b;
+}
 
 #endif

@@ -8,9 +8,9 @@
 void stencil3d(float * a, float * b) {
     int i, j, k;
 
-    for (j = 1; j < SIZEY - 1; j++) {
+    for (k = 1; k < SIZEZ - 1; k++) {
         for (i = 1; i < SIZEX - 1; i++) {
-            for (k = 1; k < SIZEZ - 1; k++) {
+            for (j = 1; j < SIZEY - 1; j++) {
                 a[k * SIZEY * SIZEX + i * SIZEY + j] = (12 * b[k * SIZEY * SIZEX + i * SIZEY + j] +
                     b[k * SIZEY * SIZEX + i * SIZEY + j + 1] +
                     b[k * SIZEY * SIZEX + i * SIZEY + j - 1] +
@@ -37,16 +37,16 @@ int main() {
 
     float s = 0;
     /* Initialization */
-    for (i = 0; i < SIZEX; i++) {
-        for (j = 0; j < SIZEY; j++) {
-            for (k = 0; k < SIZEZ; k++) {
+    for (k = 0; k < SIZEZ; k++) {
+        for (i = 0; i < SIZEX; i++) {
+            for (j = 0; j < SIZEY; j++) {
                 a[k * SIZEY * SIZEX + i * SIZEY + j] = b[k * SIZEY * SIZEX + i * SIZEY + j] = (j + 1.) / ((k + 1) * (i + 1));
             }
         }
     }
 
-    for (j = SIZEY / 4; j < SIZEY / 2; j++) {
-        for (i = SIZEX / 4; i < SIZEX / 2; i++) {
+    for (i = SIZEX / 4; i < SIZEX / 2; i++) {
+        for (j = SIZEY / 4; j < SIZEY / 2; j++) {
             b[i * SIZEY + j] = a[i * SIZEY + j] = 1;
         }
     }
@@ -54,9 +54,9 @@ int main() {
     for (h = 0; h < 100; h++) {
         stencil3d(a, b);
         
-        for (i = 0; i < SIZEX; i++) {
-            for (j = 0; j < SIZEY; j++) {
-                for (k = 0; k < SIZEZ; k++) {
+        for (k = 0; k < SIZEZ; k++) {
+            for (i = 0; i < SIZEX; i++) {
+                for (j = 0; j < SIZEY; j++) {
                     s += a[k * SIZEY * SIZEX + i * SIZEY + j];
                 }
             }
