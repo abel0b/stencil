@@ -1,5 +1,5 @@
 # stencil3D
-An accelerated 3-dimensional stencil.
+Acceleration of a 3-dimensional stencil.
 
 ## Usage
 ### Compile
@@ -13,7 +13,7 @@ make
 
 ### Test
 ```bash
-make tests
+make test
 ```
 
 ### Benchmarks
@@ -21,12 +21,15 @@ make tests
 make bench
 ```
 
-### To do
-[x] openmp
-[x] simd
-[ ] openacc
-[ ] tiled
-[ ] cuda
-
 ## Speedup results
+Speedups compared to baseline version.
 ![Speedup results](./data/plot/compare_speedup.png)
+
+
+### To do
+- [x] openmp
+- [x] simd
+- [ ] openacc
+- [ ] tiled
+- [ ] cuda
+
