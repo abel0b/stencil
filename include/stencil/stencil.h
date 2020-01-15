@@ -19,6 +19,10 @@
 #define BLOCKSIZE 4
 #endif
 
+#ifndef TIMESTEPS
+#define TIMESTEPS 32
+#endif
+
 inline int max(int a, int b) {
     return (a>=b)? a : b;
 }

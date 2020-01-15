@@ -52,20 +52,16 @@ int main() {
         }
     }
 
-    for (h = 0; h < 100; h++) {
+    for (h = 0; h < TIMESTEPS; h++) {
         stencil3d(a, b);
    
-        #pragma omp parallel for private(i) private(j)
+        #pragma omp parallel for private(i) private(j) reduction(+:s)
         for (k = 0; k < SIZEZ; k++) {
-            double s_local = 0.0;
             for (i = 0; i < SIZEX; i++) {
                 for (j = 0; j < SIZEY; j++) {
-                    s_local += a[k * SIZEY * SIZEX + i * SIZEY + j];
+                    s = s + a[k * SIZEY * SIZEX + i * SIZEY + j];
                 }
             }
-            
-            // #pragma omp critical
-            s += s_local;         
         }
 
         stencil3d(b, a);

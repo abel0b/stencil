@@ -46,7 +46,7 @@ function plot_compare_makespan() {
     echo "set terminal png size $plot_width,$plot_height" >> $output_dir/compare_speedup.conf
     echo "set output \"$output_dir/compare_speedup.png\"" >> $output_dir/compare_speedup.conf 
     echo "set xlabel \"version\"" >> $output_dir/compare_speedup.conf
-    echo "set ylabel \"speedup (ms)\"" >> $output_dir/compare_speedup.conf
+    echo "set ylabel \"speedup\"" >> $output_dir/compare_speedup.conf
     echo "set boxwidth 0.5" >> $output_dir/compare_speedup.conf
     echo "set style fill solid" >> $output_dir/compare_speedup.conf
     echo "plot \"$output_dir/compare_speedup.dat\" using 2: xtic(1) with histogram notitle" >> $output_dir/compare_speedup.conf

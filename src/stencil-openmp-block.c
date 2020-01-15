@@ -69,7 +69,7 @@ int main() {
         }
     }
 
-    for (h = 0; h < 100; h++) {
+    for (h = 0; h < TIMESTEPS; h++) {
         stencil3d(a, b);
         
         // #pragma omp parallel for private(i) private(j)

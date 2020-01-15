@@ -21,5 +21,12 @@ make tests
 make bench
 ```
 
-## Results
+### To do
+[x] openmp
+[x] simd
+[ ] openacc
+[ ] tiled
+[ ] cuda
 
+## Speedup results
+![Speedup results](./data/plot/compare_speedup.png)

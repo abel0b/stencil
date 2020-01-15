@@ -51,7 +51,7 @@ int main() {
         }
     }
 
-    for (h = 0; h < 100; h++) {
+    for (h = 0; h < TIMESTEPS; h++) {
         stencil3d(a, b);
         
         for (i = 0; i < SIZEX; i++) {
